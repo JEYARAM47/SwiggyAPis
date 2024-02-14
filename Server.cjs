@@ -22,10 +22,11 @@ async function connectToDb(){
 app.post('/add-restaurant', async function(request,response){
     try{
         await Restaurant.create({
-            "areaname":request.body.areaName,
+            "areaname":request.body.areaname,
             "avgRating":request.body.avgRating,
             "costForTwo":request.body.costForTwo,
             "cuisines":request.body.cuisines,
+            "imageLink":request.body.imageLink,
             "name":request.body.name
         })
         response.status(201).json({
